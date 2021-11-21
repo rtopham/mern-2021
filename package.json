@@ -1,7 +1,7 @@
 {
-  "name": "express-server",
+  "name": "mern-2021",
   "version": "1.0.0",
-  "description": "Basic Express Server",
+  "description": "Basic MERN Stack with Authentication and USER CRUD",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
