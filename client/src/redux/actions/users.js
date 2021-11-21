@@ -17,9 +17,7 @@ import {
   RESET_USER_PASSWORD,
   RESET_USER_PASSWORD_FAIL,
   REQUEST_PASSWORD_RESET_SUCCESS,
-  REQUEST_PASSWORD_RESET_FAIL,
-  OPEN_ACCOUNT_DELETE_MODAL,
-  CLOSE_ACCOUNT_DELETE_MODAL
+  REQUEST_PASSWORD_RESET_FAIL
 } from './types'
 
 // Set Loading
@@ -97,9 +95,6 @@ export const login = (email, password) => async (dispatch) => {
   }
 }
 
-// Old Logout
-//export const logout = () => ({ type: LOGOUT })
-
 // Logout
 export const logout = () => (dispatch) => {
   dispatch({ type: LOGOUT })
@@ -135,23 +130,10 @@ export const deleteAccount = () => async (dispatch) => {
 
     //Logout
     dispatch(logout())
-    dispatch(closeDeleteAccountModal())
     dispatch(setAlert('Account Deleted', 'success'))
   } catch (err) {
     console.error(err)
   }
-}
-
-//Open Delete Account Modal
-
-export const openDeleteAccountModal = () => (dispatch) => {
-  dispatch({ type: OPEN_ACCOUNT_DELETE_MODAL })
-}
-
-//Close Delete Account Modal
-
-export const closeDeleteAccountModal = () => (dispatch) => {
-  dispatch({ type: CLOSE_ACCOUNT_DELETE_MODAL })
 }
 
 //Request Password Reset Email

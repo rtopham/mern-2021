@@ -7,7 +7,8 @@ import {
   Row,
   Col,
   Tabs,
-  Tab
+  Tab,
+  Spinner
 } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import EditProfile from './EditProfile'
@@ -16,6 +17,15 @@ import DeleteAccount from './DeleteAccount'
 import PropTypes from 'prop-types'
 
 const Dashboard = ({ users: { user } }) => {
+  if (user === null)
+    return (
+      <Spinner
+        animation='border'
+        variant='primary'
+        className='d-block mx-auto'
+      />
+    )
+
   const { avatar, name, email, date, _id, role } = user
 
   return (

@@ -8,18 +8,11 @@ import {
   FormLabel,
   FormControl
 } from 'react-bootstrap'
-import {
-  deleteAccount,
-  closeDeleteAccountModal
-} from '../../redux/actions/users'
+import { deleteAccount } from '../../redux/actions/users'
 import { validateConfirmationText } from '../../utils/formValidation'
 import PropTypes from 'prop-types'
 
-const DeleteAccountModal = ({
-  users: { deleteAccountModalShow },
-  deleteAccount,
-  closeDeleteAccountModal
-}) => {
+const DeleteAccountModal = ({ show, setShowModal, deleteAccount }) => {
   const [formData, setFormData] = useState({ formText: '' })
 
   const { formText } = formData
@@ -32,14 +25,15 @@ const DeleteAccountModal = ({
 
   const clickCancel = () => {
     setFormData({ formText: '' })
-    closeDeleteAccountModal()
+
+    setShowModal(false)
   }
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value })
 
   return (
-    <Modal centered show={deleteAccountModalShow}>
+    <Modal centered show={show}>
       <Modal.Header>
         <Modal.Title>Permanently Delete Account?</Modal.Title>
       </Modal.Header>
@@ -52,7 +46,11 @@ const DeleteAccountModal = ({
         <Form className='mt-3'>
           <FormGroup controlId='formText'>
             <FormLabel>
-              To confirm deletion, type <i>{confirmationText}</i> below.
+              To confirm deletion, type{' '}
+              <i>
+                <b>{confirmationText}</b>
+              </i>{' '}
+              below.
             </FormLabel>
             <FormControl
               autoFocus
@@ -88,8 +86,7 @@ const DeleteAccountModal = ({
 
 DeleteAccountModal.propTypes = {
   users: PropTypes.object.isRequired,
-  deleteAccount: PropTypes.func.isRequired,
-  closeDeleteAccountModal: PropTypes.func.isRequired
+  deleteAccount: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => ({
@@ -97,6 +94,5 @@ const mapStateToProps = (state) => ({
 })
 
 export default connect(mapStateToProps, {
-  deleteAccount,
-  closeDeleteAccountModal
+  deleteAccount
 })(DeleteAccountModal)

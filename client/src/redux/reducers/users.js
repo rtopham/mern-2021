@@ -9,9 +9,7 @@ import {
   PASSWORD_RESET_TOKEN_INVALID,
   PASSWORD_RESET_TOKEN_VALID,
   RESET_USER_PASSWORD,
-  UPDATE_USER_SUCCESS,
-  OPEN_ACCOUNT_DELETE_MODAL,
-  CLOSE_ACCOUNT_DELETE_MODAL
+  UPDATE_USER_SUCCESS
 } from '../actions/types'
 
 const initialState = {
@@ -94,17 +92,6 @@ export default function users(state = initialState, action) {
       return {
         ...state,
         loading: false
-      }
-
-    case OPEN_ACCOUNT_DELETE_MODAL:
-      return {
-        ...state,
-        deleteAccountModalShow: true
-      }
-    case CLOSE_ACCOUNT_DELETE_MODAL:
-      return {
-        ...state,
-        deleteAccountModalShow: false
       }
 
     default:

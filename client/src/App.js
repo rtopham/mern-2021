@@ -11,7 +11,7 @@ import { loadUser, setLoading } from './redux/actions/users'
 import setAuthToken from './utils/setAuthToken'
 import setPublicAPIKeyHeader from './utils/setPublicAPIKey'
 
-import MyRoutes from './components/routing/MyRoutes'
+import ClientRoutes from './components/routing/ClientRoutes'
 import MainNavBar from './components/layout/MainNavBar'
 import MainContentContainer from './components/layout/MainContentContainer'
 import Alert from './components/layout/Alert'
@@ -46,7 +46,7 @@ const App = () => {
       <MainNavBar />
       <MainContentContainer>
         <Alert />
-        <MyRoutes />
+        <ClientRoutes />
       </MainContentContainer>
     </Provider>
   )

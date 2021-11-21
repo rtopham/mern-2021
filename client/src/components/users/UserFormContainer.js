@@ -4,7 +4,7 @@ import { Card, Container } from 'react-bootstrap'
 
 const UserFormContainer = ({ children, heading }) => {
   return (
-    <Container fluid className='authForms'>
+    <Container fluid className='userForms'>
       <Card border='dark' text='dark'>
         <Card.Header>
           <h1>

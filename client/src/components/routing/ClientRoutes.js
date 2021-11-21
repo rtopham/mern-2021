@@ -10,7 +10,7 @@ import PasswordResetRequest from '../users/PasswordResetRequest'
 import ResetPassword from '../users/ResetPassword'
 import RequireAuth from './RequireAuth'
 
-const MyRoutes = () => {
+const ClientRoutes = () => {
   return (
     <Routes>
       <Route exact path='/' element={<Landing />} />
@@ -36,4 +36,4 @@ const MyRoutes = () => {
   )
 }
 
-export default MyRoutes
+export default ClientRoutes

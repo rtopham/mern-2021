@@ -68,6 +68,7 @@ router.post(
           id: user.id,
           name: user.name,
           email: user.email,
+          date: user.date,
           role: user.role
         }
       }

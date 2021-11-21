@@ -29,7 +29,7 @@ div.container {
 }
 
 @media screen and (min-width: 600px) {
-  .authForms {
+  .userForms {
     max-width: 35%;
     /* background-color: pink; */
   }
