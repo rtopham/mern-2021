@@ -1,0 +1,45 @@
+.brandImage {
+  height: 35px;
+  width: 35px;
+}
+
+.alertDiv {
+  min-height: 46px;
+  margin-bottom: 2rem;
+}
+
+.contentDiv {
+  min-height: 1080px;
+}
+
+.footerPin {
+  position: relative;
+  left: 0;
+  bottom: 0;
+}
+
+div.container {
+  max-width: 1010px;
+  margin-bottom: 0px;
+}
+
+.alert {
+  max-height: 46px;
+  margin: 0, 0, 2rem, 0;
+}
+
+@media screen and (min-width: 600px) {
+  .authForms {
+    max-width: 35%;
+    /* background-color: pink; */
+  }
+  body {
+    padding-top: 64px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: 220px;
+  }
+}
